@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Return Form</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/form.css}" />
+
+</head>
+<body>
+<h1>Return Form</h1>
+<form action="#" th:action="@{/admin/returns}" th:object="${returnform}" method="post">
+    <p>Return Type: <input type="text" th:field="*{type}" /></p>
+    <p>Amount: <input type="number" th:field="*{amount}" /></p>
+    <p>Date: <input type="date" th:field="*{returndate}" /></p>
+    <td th:if="${#fields.hasErrors('returndate')}" th:errors="*{returndate}">Age Error</td>
+
+
+    <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+</form>
+</body>
+</html>

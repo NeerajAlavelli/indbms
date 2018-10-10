@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/list.css}" />
+    <style>
+        body {
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+<div >
+    <div class="container-table100">
+        <div class="wrap-table100">
+            <div class="table">
+
+                <div class="row header">
+                    <div class="cell">
+                        Employee Name
+                    </div>
+                    <div class="cell">
+                        Type
+                    </div>
+                    <div class="cell">
+                        Phone No.
+                    </div>
+                    <div class="cell">
+                        Address
+                    </div>
+                    <div class="cell">
+                        Age
+                    </div>
+                    <div class="cell">
+                        Monthly Wage
+                    </div>
+                    <div class="cell">
+                        Joining Date
+                    </div>
+                    <div class="cell">
+                        Aadhar No.
+                    </div>
+                </div>
+                <tr th:each="employee: ${list}">
+                    <div class="row">
+                        <div class="cell" data-title="Employee Name">
+                            <span th:text=" ${employee.getEmpname()}"></span>
+                        </div>
+                        <div class="cell" data-title="Type">
+                            <span th:text=" ${employee.getType()}"></span>
+                        </div>
+                        <div class="cell" data-title="Phone No.">
+                            <span th:text=" ${employee.getPhoneno()}"></span>
+                        </div>
+                        <div class="cell" data-title="Address">
+                            <span th:text=" ${employee.getAddress()}"></span>
+                        </div>
+                        <div class="cell" data-title="Age">
+                            <span th:text=" ${employee.getAge()}"></span>
+                        </div>
+                        <div class="cell" data-title="Monthly Wage">
+                            <span th:text=" ${employee.getWage()}"></span>
+                        </div>
+                        <div class="cell" data-title="Joining Date">
+                            <span th:text=" ${employee.getJoindate()}"></span>
+                        </div>
+                        <div class="cell" data-title="Aadhar No">
+                            <span th:text=" ${employee.getAadhar()}"></span>
+                        </div>
+                    </div>
+                </tr>
+
+            </div>
+        </div>
+    </div>
+</div>
+<button type="button"><a th:href="@{/admin/employee}"> Add </button>
+</body>
+</html>

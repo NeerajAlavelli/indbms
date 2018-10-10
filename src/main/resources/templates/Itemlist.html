@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/list.css}" />
+    <style>
+        body {
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+<div >
+    <div class="container-table100">
+        <div class="wrap-table100">
+            <div class="table">
+
+                <div class="row header">
+                    <div class="cell">
+                        Customer Name
+                    </div>
+                    <div class="cell">
+                        Phone No.
+                    </div>
+                    <div class="cell">
+                        Address
+                    </div>
+                </div>
+                <tr th:each="customer: ${list}">
+                    <div class="row">
+                        <div class="cell" data-title="Customer Name">
+                            <span th:text=" ${brand.getName()}"></span>
+                        </div>
+                        <div class="cell" data-title="Phone No.">
+                            <span th:text=" ${brand.getPhoneno()}"></span>
+                        </div>
+                        <div class="cell" data-title="Address">
+                            <span th:text=" ${brand.getLocation()}"></span>
+                        </div>
+                    </div>
+                </tr>
+
+            </div>
+        </div>
+    </div>
+</div>
+<button type="button"><a th:href="@{/admin/customer}"> Add </button>
+</body>
+</html>

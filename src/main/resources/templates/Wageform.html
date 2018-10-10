@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Wage Form</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/form.css}" />
+
+</head>
+<body>
+<h1>Wage Form</h1>
+<form action="#" th:action="@{/admin/wage}" th:object="${wageform}" method="post">
+    <p>Wage Amount: <input type="number" th:field="*{amount}" /></p>
+    <p>Date of Withdrawal: <input type="date" th:field="*{dateofwithdrawal}" /></p>
+    <p>Employee: <input type="number" th:field="*{employee}" /></p>
+
+    <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+</form>
+</body>
+</html>

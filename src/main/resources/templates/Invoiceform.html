@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Invoice Form</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/form.css}" />
+
+</head>
+<body>
+<h1>Invoice Form</h1>
+<form action="#" th:action="@{/admin/invoice}" th:object="${invoiceform}" method="post">
+    <p>Amount: <input type="text" th:field="*{amount}" /></p>
+    <p>Intake Date: <input type="date" th:field="*{deliverydate}" /></p>
+    <p>Supplier: <input type="number" th:field="*{supplier}" /></p>
+
+
+    <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+</form>
+</body>
+</html>

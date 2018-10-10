@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Expense List</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/list.css}" />
+    <style>
+        body {
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+<div >
+    <div class="container-table100">
+        <div class="wrap-table100">
+            <div class="table">
+
+                <div class="row header">
+                    <div class="cell">
+                        Expense Type
+                    </div>
+                    <div class="cell">
+                        Amount
+                    </div>
+                    <div class="cell">
+                        Date
+                    </div>
+                </div>
+                <tr th:each="expense: ${list}">
+                    <div class="row">
+                        <div class="cell" data-title="Expense Type">
+                            <span th:text=" ${expense.getType()}"></span>
+                        </div>
+                        <div class="cell" data-title="Amount">
+                            <span th:text=" ${expense.getAmount()}"></span>
+                        </div>
+                        <div class="cell" data-title="Date">
+                            <span th:text=" ${expense.getDateofexpenditure()}"></span>
+                        </div>
+                    </div>
+                </tr>
+
+            </div>
+        </div>
+    </div>
+</div>
+<button type="button"><a th:href="@{/admin/expense}"> Add </button>
+</body>
+</html>
