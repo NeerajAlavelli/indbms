@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>CustomerForm</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/form.css}" />
+
+</head>
+<body>
+<h1>Customer Form</h1>
+<form action="#" th:action="@{/admin/item}" th:object="${itemform}" method="post">
+    <p>Item Name: <input type="text" th:field="*{name}" /></p>
+    <p>Bar Code: <input type="number" th:field="*{barcode}" /></p>
+    <p>Size: <input type="text" th:field="*{size}" /></p>
+    <p>Colour: <input type="text" th:field="*{color}" /></p>
+    <p>MRP: <input type="number" th:field="*{mrp}" /></p>
+    <p>Discount: <input type="number" th:field="*{discount}" /></p>
+    <p>Cost Price: <input type="number" th:field="*{cp}" /></p>
+    <p>Brand: <input type="number" th:field="*{brand}" /></p>
+
+    <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+</form>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>CustomerForm</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/form.css}" />
+
+</head>
+<body>
+<h1>Customer Form</h1>
+<form action="#" th:action="@{/admin/customer}" th:object="${customerform}" method="post">
+    <p>Customer Name: <input type="text" th:field="*{name}" /></p>
+    <p>Phone No.: <input type="number" th:field="*{phoneno}" /></p>
+    <p>Address: <input type="text" th:field="*{location}" /></p>
+
+
+    <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+</form>
+</body>
+</html>

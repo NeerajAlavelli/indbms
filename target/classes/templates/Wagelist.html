@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Wage List</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/list.css}" />
+    <style>
+        body {
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+<div >
+    <div class="container-table100">
+        <div class="wrap-table100">
+            <div class="table">
+
+                <div class="row header">
+                    <div class="cell">
+                        Date of Withdrawal
+                    </div>
+                    <div class="cell">
+                        Employee
+                    </div>
+                    <div class="cell">
+                        Amount
+                    </div>
+                </div>
+                <tr th:each="wage: ${wage}">
+                    <div class="row">
+                        <div class="cell" data-title="Date of Withdrawal">
+                            <span th:text=" ${wage.getName()}"></span>
+                        </div>
+                        <div class="cell" data-title="Employee">
+                            <span th:text=" ${wage.getPhoneno()}"></span>
+                        </div>
+                        <div class="cell" data-title="Amount">
+                            <span th:text=" ${wage.getEmployee().getEmpname()}"></span>
+                        </div>
+                    </div>
+                </tr>
+
+            </div>
+        </div>
+    </div>
+</div>
+<button type="button"><a th:href="@{/admin/wage}"> Add </button>
+</body>
+</html>

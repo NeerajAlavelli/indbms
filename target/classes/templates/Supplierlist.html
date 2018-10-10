@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Supplier List</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/list.css}" />
+    <style>
+        body {
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+<div >
+    <div class="container-table100">
+        <div class="wrap-table100">
+            <div class="table">
+
+                <div class="row header">
+                    <div class="cell">
+                        Supplier Name
+                    </div>
+                    <div class="cell">
+                        Phone No.
+                    </div>
+                    <div class="cell">
+                        Location
+                    </div>
+                    <div class="cell">
+                        GSTIN
+                    </div>
+                </div>
+                <tr th:each="supplier: ${list}">
+                    <div class="row">
+                        <div class="cell" data-title="Supplier Name">
+                            <span th:text=" ${supplier.getSuppliername()}"></span>
+                        </div>
+                        <div class="cell" data-title="Phone No.">
+                            <span th:text=" ${supplier.getPhoneno()}"></span>
+                        </div>
+                        <div class="cell" data-title="Location">
+                            <span th:text=" ${supplier.getLocation()}"></span>
+                        </div>
+                        <div class="cell" data-title="Address">
+                            <span th:text=" ${supplier.getGstin()}"></span>
+                        </div>
+                    </div>
+                </tr>
+
+            </div>
+        </div>
+    </div>
+</div>
+<button type="button"><a th:href="@{/admin/supplier}"> Add </button>
+</body>
+</html>

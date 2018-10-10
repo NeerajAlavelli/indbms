@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/list.css}" />
+    <style>
+        body {
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+<div >
+    <div class="container-table100">
+        <div class="wrap-table100">
+            <div class="table">
+
+                <div class="row header">
+                    <div class="cell">
+                        Invoice ID
+                    </div>
+                    <div class="cell">
+                        Amount
+                    </div>
+                    <div class="cell">
+                        Delivery Date
+                    </div>
+                    <div class="cell">
+                        Supplier
+                    </div>
+                </div>
+                <tr th:each="invoice: ${list}">
+                    <div class="row">
+                        <div class="cell" data-title="Invoice ID">
+                            <span th:text=" ${invoice.getId()}"></span>
+                        </div>
+                        <div class="cell" data-title="Amount">
+                            <span th:text=" ${invoice.getAmount()}"></span>
+                        </div>
+                        <div class="cell" data-title="Delivery Date">
+                            <span th:text=" ${invoice.getDeliverydate()}"></span>
+                        </div>
+                        <div class="cell" data-title="Supplier">
+                            <span th:text=" ${invoice.getSupplier().getSuppliername()}"></span>
+                        </div>
+
+                    </div>
+                </tr>
+
+            </div>
+        </div>
+    </div>
+</div>
+<button type="button"><a th:href="@{/admin/invoice}"> Add </button>
+</body>
+</html>

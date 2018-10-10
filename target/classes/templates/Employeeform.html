@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Employee Form</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/form.css}" />
+
+</head>
+<body>
+<h1>Employee Form</h1>
+<form action="#" th:action="@{/admin/employee}" th:object="${employeeform}" method="post">
+    <p>Employee Name: <input type="text" th:field="*{empname}" /></p>
+    <p>Type: <input type="text" th:field="*{type}" /></p>
+    <p>Aadhar No: <input type="number" th:field="*{aadhar}" /></p>
+    <p>Age: <input type="number" th:field="*{age}" /></p>
+    <p>Address: <input type="text" th:field="*{address}" /></p>
+    <p>Date: <input type="date" th:field="*{joindate}" /></p>
+    <p>Phone No. <input type="number" th:field = "*{phoneno}" /></p>
+    <p>Monthly Wage <input type="number" th:field = "*{wage}" /></p>
+
+    <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+</form>
+</body>
+</html>

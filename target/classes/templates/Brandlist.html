@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/list.css}" />
+    <style>
+        body {
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+<div >
+    <div class="container-table100">
+        <div class="wrap-table100">
+            <div class="table">
+
+                <div class="row header">
+                    <div class="cell">
+                        Brand Name
+                    </div>
+                    <div class="cell">
+                        Category
+                    </div>
+                    <div class="cell">
+                        Supplier
+                    </div>
+                </div>
+                <tr th:each="brand: ${list}">
+                    <div class="row">
+                        <div class="cell" data-title="Brand Name">
+                           <span th:text=" ${brand.getBrandname()}"></span>
+                        </div>
+                        <div class="cell" data-title="Category">
+                            <span th:text=" ${brand.getCategory()}"></span>
+                        </div>
+                        <div class="cell" data-title="Supplier">
+                            <span th:text=" ${brand.getSupplier().getSuppliername()}"></span>
+                        </div>
+                    </div>
+                </tr>
+
+            </div>
+        </div>
+    </div>
+</div>
+<button type="button"><a th:href="@{/admin/brand}"> Add </button>
+</body>
+</html>

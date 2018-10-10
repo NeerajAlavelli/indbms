@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Voucher List</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/list.css}" />
+    <style>
+        body {
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+<div >
+    <div class="container-table100">
+        <div class="wrap-table100">
+            <div class="table">
+
+                <div class="row header">
+                    <div class="cell">
+                        Voucher ID
+                    </div>
+                    <div class="cell">
+                        Amount
+                    </div>
+                    <div class="cell">
+                        Date of Sale
+                    </div>
+                    <div class="cell">
+                        Customer
+                    </div>
+                </div>
+                <tr th:each="voucher: ${list}">
+                    <div class="row">
+                        <div class="cell" data-title="Voucher ID">
+                            <span th:text=" ${voucher.getId()}"></span>
+                        </div>
+                        <div class="cell" data-title="Amount">
+                            <span th:text=" ${voucher.getAmount()}"></span>
+                        </div>
+                        <div class="cell" data-title="Date of Sale">
+                            <span th:text=" ${voucher.getSaledate()}"></span>
+                        </div>
+                        <div class="cell" data-title="Customer">
+                            <span th:text=" ${voucher.getCustomer().getName()}"></span>
+                        </div>
+
+                    </div>
+                </tr>
+
+            </div>
+        </div>
+    </div>
+</div>
+<button type="button"><a th:href="@{/admin/voucher}"> Add </button>
+</body>
+</html>

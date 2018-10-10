@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Returns List</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/list.css}" />
+    <style>
+        body {
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+<div >
+    <div class="container-table100">
+        <div class="wrap-table100">
+            <div class="table">
+
+                <div class="row header">
+                    <div class="cell">
+                        Return Type
+                    </div>
+                    <div class="cell">
+                        Amount
+                    </div>
+                    <div class="cell">
+                        Date
+                    </div>
+                </div>
+                <tr th:each="taxReturn: ${list}">
+                    <div class="row">
+                        <div class="cell" data-title="Return Type">
+                            <span th:text=" ${taxReturn.getType()}"></span>
+                        </div>
+                        <div class="cell" data-title="Amount">
+                            <span th:text=" ${taxReturn.getAmount()}"></span>
+                        </div>
+                        <div class="cell" data-title="Date">
+                            <span th:text="${taxReturn.getReturndate()}"></span>
+                        </div>
+                    </div>
+                </tr>
+
+            </div>
+        </div>
+    </div>
+</div>
+<button type="button"><a th:href="@{/admin/returns}"> Add </button>
+</body>
+</html>
